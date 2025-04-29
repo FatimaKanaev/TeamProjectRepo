@@ -8,12 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Fairy extends Actor
 {
-    /**
-     * Act - do whatever the Fairy wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public Fairy()
+    {
+        setImage("Fairy.png"); // replace with your actual fairy image
+    }
+
     public void act()
     {
-        // Add your action code here.
+        // Add any behavior for the fairy here if you want
     }
 }

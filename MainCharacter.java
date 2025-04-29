@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
 /**
  * Write a description of class MainCharacter here.
@@ -6,46 +6,84 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
+
 public class MainCharacter extends Actor
 {
-    /**
-     * Act - do whatever the MainCharacter wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private int animationCounter = 0;
+    private int animationFrame = 2;
+    private String direction = "left";
+
     public MainCharacter()
     {
-        setImage("MainCharacterRight.png");
+        setImage("MainCharacterLeft2.png");
     }
 
     public void act() 
     {
+        boolean keyPressed = false;
+
         if (Greenfoot.isKeyDown("up")) {
-            setImage("MainCharacterUp.png");
+            direction = "up";
             moveUp();
+            setImage("MainCharacterUp.png");
+            keyPressed = true;
         } 
         else if (Greenfoot.isKeyDown("down")) {
-            setImage("MainCharacterRight.png");
+            direction = "down";
             moveDown();
+            setImage("MainCharacterRight.png");
+            keyPressed = true;
         }
         else if (Greenfoot.isKeyDown("left")) {
-            setImage("MainCharacterLeft.png");
+            direction = "left";
             move(-2);
+            animateLeftWalk();
+            keyPressed = true;
         } 
         else if (Greenfoot.isKeyDown("right")) {
-            setImage("MainCharacterRight.png");
+            direction = "right";
             move(2);
-        } 
-        else {
-            setImage("MainCharacterRight.png");
+            animateRightWalk();
+            keyPressed = true;
+        }
+
+        if (!keyPressed) {
+            if (direction.equals("right") || direction.equals("left")) {
+                setImage("MainCharacter" + capitalize(direction) + "2.png");
+            } else {
+                setImage("MainCharacter" + capitalize(direction) + ".png");
+            }
         }
     }
-    
+
     private void moveDown() {
         setLocation(getX(), getY() + 5);
     }
-    
+
     private void moveUp() {
         setLocation(getX(), getY() - 5);
+    }
+
+    private void animateRightWalk() {
+        animationCounter++;
+        if (animationCounter % 5 == 0) {
+            animationFrame++;
+            if (animationFrame > 4) animationFrame = 2;
+            setImage("MainCharacterRight" + animationFrame + ".png");
+        }
+    }
+
+    private void animateLeftWalk() {
+        animationCounter++;
+        if (animationCounter % 5 == 0) {
+            animationFrame++;
+            if (animationFrame > 4) animationFrame = 2;
+            setImage("MainCharacterLeft" + animationFrame + ".png");
+        }
+    }
+
+    private String capitalize(String str) {
+        return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 
 }
