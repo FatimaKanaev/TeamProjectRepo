@@ -17,6 +17,7 @@ public class WelcomeWorld extends World
         Quit quit = new Quit();
         addObject(quit,726,418);
         prepare();
+        
     }
     
     /**

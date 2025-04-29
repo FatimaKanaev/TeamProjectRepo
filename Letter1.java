@@ -15,28 +15,34 @@ public class Letter1 extends Actor
     public void act()
     {
         if (Greenfoot.mouseClicked(this) && !clicked) {
-        World world = getWorld();
-        int x = 500;
-        int y = 225;
-        world.addObject(new Letter2(), x, y);
-        world.removeObject(this);
-        clicked = true;
-        letter2Added = true;
+            World world = getWorld();
+            
+            // Removing Click object
+            Click click = (Click) world.getObjects(Click.class).get(0);
+            if (click != null) {
+                world.removeObject(click);
+            }
+            
+            // Removing Letter1 and add Letter2
+            int x = 500;
+            int y = 225;
+            world.addObject(new Letter2(), x, y);
+            world.removeObject(this);
+            
+            clicked = true;
+            letter2Added = true;
         }
 
-        // Timer logic runs AFTER click, continuously in each act
         if (letter2Added && timer < 300) {
             timer++;
         }
 
-        // After 5 seconds (300 acts), add Continue
         if (letter2Added && timer == 300) {
             World world = getWorld();
             int x2 = 650;
             int y2 = 400;
             world.addObject(new Continue(), x2, y2);
 
-            // Prevent adding it again
             letter2Added = false;
         }
     }
