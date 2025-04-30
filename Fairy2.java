@@ -15,6 +15,7 @@ public class Fairy2 extends World
      */
     public Fairy2()
     {    
-        super(747, 431, 1);
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(747, 431, 1); 
     }
 }
