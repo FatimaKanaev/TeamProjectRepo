@@ -10,11 +10,11 @@ public class Fairy extends Actor
 {
     public Fairy()
     {
-        setImage("Fairy.png"); // replace with your actual fairy image
+        setImage("Fairy.png");
     }
 
     public void act()
     {
-        // Add any behavior for the fairy here if you want
+        
     }
 }

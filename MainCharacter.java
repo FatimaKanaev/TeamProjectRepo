@@ -12,10 +12,10 @@ public class MainCharacter extends Actor
     private int animationCounter = 0;
     private int animationFrame = 2;
     private String direction = "left";
-
+    
     public MainCharacter()
     {
-        setImage("MainCharacterLeft2.png");
+        setImage("MainCharacterLeft.png");
     }
 
     public void act() 
@@ -36,22 +36,23 @@ public class MainCharacter extends Actor
         }
         else if (Greenfoot.isKeyDown("left")) {
             direction = "left";
-            move(-2);
+            move(-5);
             animateLeftWalk();
             keyPressed = true;
-        } 
+        }
         else if (Greenfoot.isKeyDown("right")) {
             direction = "right";
-            move(2);
+            move(5);
             animateRightWalk();
             keyPressed = true;
         }
 
         if (!keyPressed) {
             if (direction.equals("right") || direction.equals("left")) {
-                setImage("MainCharacter" + capitalize(direction) + "2.png");
-            } else {
                 setImage("MainCharacter" + capitalize(direction) + ".png");
+            } 
+            else {
+                setImage("MainCharacterRight.png");
             }
         }
     }
@@ -63,21 +64,21 @@ public class MainCharacter extends Actor
     private void moveUp() {
         setLocation(getX(), getY() - 5);
     }
-
+    
     private void animateRightWalk() {
         animationCounter++;
         if (animationCounter % 5 == 0) {
             animationFrame++;
-            if (animationFrame > 4) animationFrame = 2;
+            if (animationFrame > 3) animationFrame = 2;
             setImage("MainCharacterRight" + animationFrame + ".png");
         }
-    }
+     }
 
     private void animateLeftWalk() {
         animationCounter++;
         if (animationCounter % 5 == 0) {
             animationFrame++;
-            if (animationFrame > 4) animationFrame = 2;
+            if (animationFrame > 3) animationFrame = 2;
             setImage("MainCharacterLeft" + animationFrame + ".png");
         }
     }
@@ -86,4 +87,4 @@ public class MainCharacter extends Actor
         return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 
-}
+} 
