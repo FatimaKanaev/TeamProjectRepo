@@ -7,13 +7,13 @@ import greenfoot.*;
  * @version (a version number or a date)
  */
 
-public class MainCharacter extends Actor
+public class MainCharacterFairy1 extends Actor
 {
     private int animationCounter = 0;
     private int animationFrame = 2;
     private String direction = "left";
     
-    public MainCharacter()
+    public MainCharacterFairy1()
     {
         setImage("MainCharacterLeft.png");
     }

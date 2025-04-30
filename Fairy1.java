@@ -4,7 +4,7 @@ public class Fairy1 extends World
 {
     private int frameCounter = 0;
     private boolean fairyAdded = false;
-    private MainCharacter mainCharacter;
+    private MainCharacterFairy1 mainCharacter;
 
     public Fairy1()
     {    
@@ -25,7 +25,7 @@ public class Fairy1 extends World
 
     private void prepare()
     {
-        mainCharacter = new MainCharacter();
+        mainCharacter = new MainCharacterFairy1();
         addObject(mainCharacter, 442, 320);
     }
 
