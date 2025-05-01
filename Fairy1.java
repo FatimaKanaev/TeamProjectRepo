@@ -20,21 +20,11 @@ public class Fairy1 extends World
             addObject(fairy, 220, 130);
             fairyAdded = true;
         }
-        controlCharacterMovement();
     }
 
     private void prepare()
     {
         mainCharacter = new MainCharacterFairy1();
         addObject(mainCharacter, 442, 320);
-    }
-
-    private void controlCharacterMovement()
-    {
-        int newY = mainCharacter.getY() - 5;
-        if (newY < 174) {
-            newY = 174;
-        }
-        mainCharacter.setLocation(mainCharacter.getX(), newY);
     }
 }

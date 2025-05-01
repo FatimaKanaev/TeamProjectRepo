@@ -12,8 +12,12 @@ public class Witch extends Actor
      * Act - do whatever the Witch wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public Witch() {
+        setImage("Witch.png");
+    }
+    
     public void act()
     {
-        // Add your action code here.
+        
     }
 }

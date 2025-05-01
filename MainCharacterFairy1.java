@@ -63,13 +63,21 @@ public class MainCharacterFairy1 extends Actor
 
     private void moveUp() {
         setLocation(getX(), getY() - 5);
+        // To block the main character to walk on the wall
+        int newY = getY() - 5;
+        if (newY < 174) {
+            newY = 174;
+        }
+        setLocation(getX(), newY);
     }
+    
     
     private void animateRightWalk() {
         animationCounter++;
         if (animationCounter % 5 == 0) {
             animationFrame++;
-            if (animationFrame > 3) animationFrame = 2;
+            animationFrame = 2;
+            if (animationFrame > 3)
             setImage("MainCharacterRight" + animationFrame + ".png");
         }
      }
@@ -78,7 +86,8 @@ public class MainCharacterFairy1 extends Actor
         animationCounter++;
         if (animationCounter % 5 == 0) {
             animationFrame++;
-            if (animationFrame > 3) animationFrame = 2;
+            animationFrame = 2;
+            if (animationFrame > 3)
             setImage("MainCharacterLeft" + animationFrame + ".png");
         }
     }
@@ -87,4 +96,4 @@ public class MainCharacterFairy1 extends Actor
         return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 
-} 
+}

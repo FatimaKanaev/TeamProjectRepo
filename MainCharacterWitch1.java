@@ -1,19 +1,85 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class MainCharacterWitch1 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class MainCharacterWitch1 extends Actor
 {
-    /**
-     * Act - do whatever the MainCharacterWitch1 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
+    private int animationCounter = 0;
+    private int animationFrame = 2;
+    private String direction = "left";
+
+    public MainCharacterWitch1()
     {
-        // Add your action code here.
+        setImage("MainCharacterLeft.png");
+    }
+
+    public void act() 
+    {
+        boolean keyPressed = false;
+
+        if (Greenfoot.isKeyDown("up")) {
+            direction = "up";
+            moveIfNoCollision(0, -5);
+            setImage("MainCharacterUp.png");
+            keyPressed = true;
+        } 
+        else if (Greenfoot.isKeyDown("down")) {
+            direction = "down";
+            moveIfNoCollision(0, 5);
+            setImage("MainCharacterRight.png");
+            keyPressed = true;
+        }
+        else if (Greenfoot.isKeyDown("left")) {
+            direction = "left";
+            moveIfNoCollision(-5, 0);
+            animateLeftWalk();
+            keyPressed = true;
+        }
+        else if (Greenfoot.isKeyDown("right")) {
+            direction = "right";
+            moveIfNoCollision(5, 0);
+            animateRightWalk();
+            keyPressed = true;
+        }
+
+        if (!keyPressed) {
+            if (direction.equals("right") || direction.equals("left")) {
+                setImage("MainCharacter" + capitalize(direction) + ".png");
+            } 
+            else {
+                setImage("MainCharacterRight.png");
+            }
+        }
+    }
+
+    // Move only if the next location does not intersect a Witch
+    private void moveIfNoCollision(int dx, int dy) {
+        int newX = getX() + dx;
+        int newY = getY() + dy;
+        setLocation(newX, newY);
+        Actor witch = getOneIntersectingObject(Witch.class); // Check for collision
+        if (witch != null) {
+            setLocation(getX() - dx, getY() - dy); // Undo move if collided
+        }
+    }
+
+    private void animateRightWalk() {
+        animationCounter++;
+        if (animationCounter % 5 == 0) {
+            animationFrame++;
+            if (animationFrame > 3) animationFrame = 2;
+            setImage("MainCharacterRight" + animationFrame + ".png");
+        }
+    }
+
+    private void animateLeftWalk() {
+        animationCounter++;
+        if (animationCounter % 5 == 0) {
+            animationFrame++;
+            if (animationFrame > 3) animationFrame = 2;
+            setImage("MainCharacterLeft" + animationFrame + ".png");
+        }
+    }
+
+    private String capitalize(String str) {
+        return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 }

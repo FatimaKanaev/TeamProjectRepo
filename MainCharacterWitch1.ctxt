@@ -1,7 +1,15 @@
 #BlueJ class context
 comment0.target=MainCharacterWitch1
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ MainCharacterWitch1\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ MainCharacterWitch1\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
+comment1.target=MainCharacterWitch1()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=dx\ dy
+comment3.target=void\ moveIfNoCollision(int,\ int)
+comment4.params=
+comment4.target=void\ animateRightWalk()
+comment5.params=
+comment5.target=void\ animateLeftWalk()
+comment6.params=str
+comment6.target=java.lang.String\ capitalize(java.lang.String)
+numComments=7
