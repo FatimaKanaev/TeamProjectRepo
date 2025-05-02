@@ -26,5 +26,7 @@ public class Fairy1 extends World
     {
         mainCharacter = new MainCharacterFairy1();
         addObject(mainCharacter, 442, 320);
+        MainCharacterFairy1 mainCharacterFairy12 = new MainCharacterFairy1();
+        addObject(mainCharacterFairy12,189,211);
     }
 }

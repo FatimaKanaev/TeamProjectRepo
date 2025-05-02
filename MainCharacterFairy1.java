@@ -71,23 +71,32 @@ public class MainCharacterFairy1 extends Actor
         setLocation(getX(), newY);
     }
     
+    // private void Placard(){
+        // setLocation(getX(),getY()-5);
+        // int newY = getY()-5;
+        // if(newY<211){
+            // newY=
+        // }
+    // }
     
     private void animateRightWalk() {
         animationCounter++;
         if (animationCounter % 5 == 0) {
             animationFrame++;
-            animationFrame = 2;
-            if (animationFrame > 3)
+            if (animationFrame > 3) {
+                animationFrame = 2;
+            }
             setImage("MainCharacterRight" + animationFrame + ".png");
         }
-     }
+    }
 
     private void animateLeftWalk() {
         animationCounter++;
         if (animationCounter % 5 == 0) {
             animationFrame++;
-            animationFrame = 2;
-            if (animationFrame > 3)
+            if (animationFrame > 3) {
+                animationFrame = 2;
+            }
             setImage("MainCharacterLeft" + animationFrame + ".png");
         }
     }
