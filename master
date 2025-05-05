@@ -1,0 +1,66 @@
+[33mcommit 4832894a700e533f7e06b1b7fa9d09ef03fd08ba[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: FatimaKanaev <kanaevfatima@gmail.com>
+Date:   Fri May 2 15:48:35 2025 -0400
+
+    Added some codes
+
+[33mcommit 68756ba99eeda60910ac1765e71ef6213d487775[m
+Author: FatimaKanaev <kanaevfatima@gmail.com>
+Date:   Wed Apr 30 22:52:13 2025 -0400
+
+    Moving character for each world
+
+[33mcommit 36957f2c5cae41b9fd8f1b7360aaff400bbac862[m
+Author: Fatima <kanaevfatima@gmail.com>
+Date:   Wed Apr 30 13:56:11 2025 -0400
+
+    Different characters for different world added
+
+[33mcommit 304593f49c06bdbf3e3728d34bc8a6df82e0512d[m
+Merge: b8a019b 4ff2f48
+Author: IlsaRehmat <kanaevfatima@gmail.com>
+Date:   Wed Apr 30 13:19:18 2025 -0400
+
+    merge
+
+[33mcommit b8a019b0fadde2e544b01323c54411ed0e4c00bb[m
+Author: IlsaRehmat <kanaevfatima@gmail.com>
+Date:   Wed Apr 30 13:13:04 2025 -0400
+
+    addded codes
+
+[33mcommit 4ff2f480320bd3b00a0a6e26e7636543462f73c5[m
+Author: IlsaRehmat <email>
+Date:   Wed Apr 30 13:02:11 2025 -0400
+
+    added stuff
+
+[33mcommit b0868e234ccfc96e150a9853d20bde03816945dc[m
+Author: IlsaRehmat <%email%>
+Date:   Tue Apr 29 15:49:14 2025 -0400
+
+    i added movement for the maincharacter and fairy
+
+[33mcommit 2a982521b631456da7625ad522d8ccb7a5a82cf9[m
+Author: %username% <%email%>
+Date:   Tue Apr 29 13:54:22 2025 -0400
+
+    MAin character moving codes
+
+[33mcommit 679d729d24b51864b64f4393897b92964905fe25[m
+Author: %username% <%email%>
+Date:   Tue Apr 29 12:26:53 2025 -0400
+
+     the project updated till 29 april
+
+[33mcommit ce0599447a4b726c0ba3696e2384d470535460f8[m
+Author: Louna <kanaevfatima@gmail.com>
+Date:   Thu Apr 24 14:25:34 2025 -0400
+
+    Characters
+
+[33mcommit 92d4297da41e0935da7334ea390701e73a19fe85[m
+Author: %username% <%email%>
+Date:   Tue Apr 22 12:57:27 2025 -0400
+
+    Initial files
