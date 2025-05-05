@@ -27,7 +27,7 @@ public class Continue extends Actor
         }
         
         if (Greenfoot.mouseClicked(this)) {
-            Greenfoot.setWorld(new Fairy1());
+            Greenfoot.setWorld(new WakingUp());
         }
     }
     
