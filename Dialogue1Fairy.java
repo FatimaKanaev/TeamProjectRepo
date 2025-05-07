@@ -28,7 +28,6 @@ public class Dialogue1Fairy extends DialogueBox
         return wrapped.toString().trim();
     }
     public Dialogue1Fairy(){
-   
         lines = new String[]{
             "Oh! Well, hello there! Are you alright? You look... rather lost.",
             "I guess I am. I just woke up in the middle of nowhere, and I can’t\nremember how I got here… or much of anything, really.",
@@ -67,6 +66,3 @@ public class Dialogue1Fairy extends DialogueBox
         Greenfoot.setWorld(new FairyMeeting2());
     }
 }
-
-
-

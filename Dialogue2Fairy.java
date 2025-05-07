@@ -16,7 +16,6 @@ public class Dialogue2Fairy extends DialogueBox
         for (String word : words){
             String testLine = line + word + "";
             GreenfootImage testImg = new GreenfootImage(testLine.toString(), font.getSize(), Color.WHITE, new Color(0,0,0,0));
-            
             if (testImg.getWidth()>maxWidth){
                 wrapped.append(line).append("\n");
                 line = new StringBuilder(word+ "");
@@ -28,7 +27,7 @@ public class Dialogue2Fairy extends DialogueBox
         return wrapped.toString().trim();
     }
     public Dialogue2Fairy(){
-   
+        
         lines = new String[]{
             "Oh my stars! You did it—you’ve lit up all my moonroses! Now I can keep\nproducing fairy dust! I truly can’t thank you enough, dear one.",
             "Here--take this prism, just as I promised.",

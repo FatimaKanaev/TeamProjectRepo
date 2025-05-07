@@ -10,6 +10,4 @@ comment2.text=\r\n\ \r\n
 comment3.params=dx\ dy
 comment3.target=void\ moveInDirection(int,\ int)
 comment3.text=\r\n\ \r\n
-comment4.params=
-comment4.target=void\ checkBounce()
-numComments=5
+numComments=4

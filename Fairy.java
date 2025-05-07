@@ -39,6 +39,7 @@ public class  Fairy extends Actor {
                 }
             }
         }
+        
         if (getWorld() instanceof FairyMeeting3){
             if (distance <= triggerDistance) {
                 if (!iconVisible) {
@@ -57,8 +58,6 @@ public class  Fairy extends Actor {
                 }
             }
         }
-            
-
         ePressedLastTime = Greenfoot.isKeyDown("e");
     }
 }

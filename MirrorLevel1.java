@@ -41,25 +41,7 @@ public class MirrorLevel1 extends Actor
         }
     }
 
-    private void checkBounce() {
-<<<<<<< HEAD
-        if (isTouching(Gérarld.class)) {
-            // Basic bounce: reverse direction
-            dx = -dx * 0.7; // recoil, maybe weaker
-            dy = -dy * 0.7;
-
-            // Move it slightly back so it unsticks
-            setLocation((int)(getX() + dx), (int)(getY() + dy));
-        }
-        if (isTouching(Bernard.class)) {
-            // Basic bounce: reverse direction
-            dx = -dx * 0.7; // recoil, maybe weaker
-            dy = -dy * 0.7;
-
-            // Move it slightly back so it unsticks
-            setLocation((int)(getX() + dx), (int)(getY() + dy));
-        }
-=======
+    // private void checkBounce() {
         // if (isTouching(Gérarld.class)) {
             // // Basic bounce: reverse direction
             // dx = -dx * 0.7; // recoil, maybe weaker
@@ -76,6 +58,21 @@ public class MirrorLevel1 extends Actor
             // // Move it slightly back so it unsticks
             // setLocation((int)(getX() + dx), (int)(getY() + dy));
         // }
->>>>>>> 7737e13e8b6395a01c236cc69da955d38c006376
+        // if (isTouching(Gérarld.class)) {
+            // // Basic bounce: reverse direction
+            // dx = -dx * 0.7; // recoil, maybe weaker
+            // dy = -dy * 0.7;
+
+            // // Move it slightly back so it unsticks
+            // setLocation((int)(getX() + dx), (int)(getY() + dy));
+        // }
+        // if (isTouching(Bernard.class)) {
+            // // Basic bounce: reverse direction
+            // dx = -dx * 0.7; // recoil, maybe weaker
+            // dy = -dy * 0.7;
+
+            // // Move it slightly back so it unsticks
+            // setLocation((int)(getX() + dx), (int)(getY() + dy));
+        // }
+
     }
-}

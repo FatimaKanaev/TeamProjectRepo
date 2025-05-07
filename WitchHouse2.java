@@ -143,7 +143,6 @@ public class WitchHouse2 extends World
         addObject(michel56,438,244);
         Witch witch = new Witch();
         addObject(witch,243,228);
-<<<<<<< HEAD
         witch.setLocation(308,223);
         witch.setLocation(309,217);
         Pearls pearls = new Pearls();
@@ -157,14 +156,12 @@ public class WitchHouse2 extends World
         mainCharacter.setLocation(379,252);
         mainCharacter.setLocation(271,307);
         mainCharacter.setLocation(373,310);
-=======
         witch.setLocation(309,217);
-        Pearls pearls = new Pearls();
+        // Pearls pearls = new Pearls();
         addObject(pearls,459,256);
         pearls.setLocation(453,257);
-        Quentin quentin = new Quentin();
+        // Quentin quentin = new Quentin();
         addObject(quentin,453,257);
->>>>>>> 7737e13e8b6395a01c236cc69da955d38c006376
         mainCharacter.setLocation(369,320);
     }
 }

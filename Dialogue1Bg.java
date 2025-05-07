@@ -15,7 +15,6 @@ public class Dialogue1Bg extends World
      */
     public Dialogue1Bg()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(747, 431, 1); 
         prepare();
     }
@@ -30,5 +29,10 @@ public class Dialogue1Bg extends World
         int boxHeight = 100;
 
         addObject(new Dialogue1Fairy(), screenWidth / 2, screenHeight - boxHeight / 2 -25);
+        
+    }
+    
+    public void act() {
+        
     }
 }
