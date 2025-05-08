@@ -1,40 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.ArrayList;
-import java.util.List;
 
-/**
- * Write a description of class FairyRoom here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class FairyRoom extends World
 {
+    private GreenfootSound backgroundMusic; 
 
-    /**
-     * Constructor for objects of class FairyRoom.
-     * 
-     */
-    private GreenfootSound backgroundMusic;
-    
-    public FairyRoom()
-    {    
-        super(747, 431, 1); 
-        backgroundMusic = new GreenfootSound("Theme12.wav");
-        backgroundMusic.playLoop();
-        prepare();
+    public FairyRoom() {
+        super(747, 431, 1);
+        
     }
-    
-    public void started() {
-        if(backgroundMusic != null)
-        backgroundMusic.playLoop();
-    }
-    
-    public void stopped() {
-        if (backgroundMusic != null)
-        backgroundMusic.pause();
-    }
-    
+        
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -148,4 +122,6 @@ public class FairyRoom extends World
         MirrorLevel1 mirrorLevel12 = new MirrorLevel1();
         addObject(mirrorLevel12,339,336);
     }
+    
+
 }

@@ -7,15 +7,16 @@ public class ShellPlay extends World {
 
     public ShellPlay() {    
         super(600, 400, 1);  // Create a world with a width of 600 and height of 400 pixels
-
+        BackgroundMusicController.stopBackgroundMusic();
         // Add the shells to the world
-        addObject(new Shell1(), 100, 200);  // Position Shell 1
-        addObject(new Shell2(), 200, 200);  // Position Shell 2
-        addObject(new Shell3(), 300, 200);  // Position Shell 3
-        addObject(new Shell4(), 400, 200);  // Position Shell 4
+        addObject(new Shell1(), 80, 200);  // Position Shell 1
+        addObject(new Shell2(), 250, 200);  // Position Shell 2
+        addObject(new Shell3(), 410, 200);  // Position Shell 3
+        addObject(new Shell4(), 700, 200);  // Position Shell 4
 
         // Display a brief instruction
         showText("Click the shells in the correct order!", 300, 50);
+        prepare();
     }
 
     // This method is called when a shell is clicked
@@ -26,7 +27,7 @@ public class ShellPlay extends World {
         if (playerClicks[currentIndex] == correctOrder[currentIndex]) {
             currentIndex++;  // Move to the next index
             if (currentIndex == 4) {
-                puzzleSolved();  // Puzzle is solved
+                puzzleSolved(); 
             }
         } else {
             resetPuzzle();  // Reset the puzzle if the wrong shell is clicked
@@ -48,5 +49,14 @@ public class ShellPlay extends World {
         }
         showText("Wrong sequence! Try again.", 300, 50);  // Show a message
         Greenfoot.delay(50);  // Delay for a moment
+        
+    }
+    
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
     }
 }

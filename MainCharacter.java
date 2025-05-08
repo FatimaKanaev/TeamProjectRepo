@@ -87,7 +87,7 @@ public class MainCharacter extends Actor {
                 Greenfoot.setWorld(new MeetMermaid());
             }
             if (currentWorld instanceof MeetMermaid3) {
-                Greenfoot.setWorld(new Win());
+                Greenfoot.setWorld(new WinWorld());
             }
         }
     }
