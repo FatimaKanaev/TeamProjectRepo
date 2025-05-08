@@ -68,9 +68,6 @@ public class MainCharacter extends Actor {
             if (currentWorld instanceof WalkToMermaid2) {
                 Greenfoot.setWorld(new MeetMermaid());
             }
-            if (currentWorld instanceof FinalBossTraject1) {
-                Greenfoot.setWorld(new FinalBossWalking2());
-            }
             if (currentWorld instanceof FairyMeeting4) {
                 Greenfoot.setWorld(new WalkToTheWitch1());
             }
@@ -90,7 +87,7 @@ public class MainCharacter extends Actor {
                 Greenfoot.setWorld(new MeetMermaid());
             }
             if (currentWorld instanceof MeetMermaid3) {
-                Greenfoot.setWorld(new FinalBossTraject1());
+                Greenfoot.setWorld(new Win());
             }
         }
     }

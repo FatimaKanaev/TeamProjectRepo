@@ -30,8 +30,7 @@ public class Dialogue5Mermaid extends DialogueBox {
     public Dialogue5Mermaid(){
    
         lines = new String[]{
-            "Good! You’ve succeeded! Don’t waste any more time, the princess is this way, you’ll understand everything once there, don’t you worry!",
-            "Here’s the celestial pearl. Time may be broken, but it’s still running out!"
+            "Congratulation! You’ve succeeded the whole challenges! I'm so proud of you./nOn your left you'll find the exit! "
         };
         speakers = new String[] { "Mermaid", "Mermaid" };
         updateDisplay();

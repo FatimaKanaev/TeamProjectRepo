@@ -1,9 +1,12 @@
 #BlueJ class context
 comment0.target=DialogueBox
+comment0.text=\r\n\ DialogueBox\ class\ to\ manage\ the\ display\ of\ dialogue\ lines\ and\ speakers.\r\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=void\ updateDisplay()
+comment2.text=\r\n\ Updates\ the\ displayed\ text\ in\ the\ dialogue\ box.\r\n
 comment3.params=
 comment3.target=void\ onDialogueEnd()
+comment3.text=\r\n\ This\ method\ is\ triggered\ when\ the\ dialogue\ reaches\ the\ end.\r\n\ It\ changes\ the\ world\ to\ the\ next\ one.\r\n
 numComments=4

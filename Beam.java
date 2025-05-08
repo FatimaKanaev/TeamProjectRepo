@@ -1,74 +1,71 @@
 import greenfoot.*;
-import java.awt.Point;
-import java.util.List;
+
 public class Beam extends Actor
 {
-    private List<Point> path;
-    private int currentTargetIndex = 0;
-    private boolean rotationSet = false; // <-- NEW: ensure we set rotation only once
-    private static final double TOLERANCE = 15;
-    private static int pointsReached = 0; // Track how many points we've reached
-    private static final int REQUIRED_POINTS = 5; // A, B, C, D, then back to A = 5 points
-    
-    public Beam(List<Point> path) {
-        this.path = path;
-        setImage(makeBeamImage());
+    private boolean hasReflectedOnce = false;  // Flag to track first reflection
+    private boolean hasReflectedTwice = false; // Flag to track second reflection
+    private static final int BEAM_SPEED = 8;  // Speed of the beam
+    private boolean hasTouchedMoon = false;  // Flag to check if the beam touched the Moon after the second reflection
+
+    // Constructor to set the initial angle of the beam
+    public Beam(int angle)
+    {
+        setRotation(angle); // Set the initial direction
+        setImage(makeBeamImage()); // Set the beam image
     }
-    
-    public void act() {
-        if (!rotationSet) {
-            setInitialRotation();
-            rotationSet = true;
-        }
-        
-        if (path != null && currentTargetIndex < path.size()) {
-            Point target = path.get(currentTargetIndex);
-            move(8);
-            if (distanceTo(target) < TOLERANCE) {
-                currentTargetIndex++;
-                pointsReached++; // Increment our counter whenever we reach a point
-                
-                // If we've reached all points (A→B→C→D→A), change the world
-                if (pointsReached >= REQUIRED_POINTS) {
-                    Greenfoot.setWorld(new FairyMeeting3());
-                    return; // Exit after changing world
-                }
-                
-                if (currentTargetIndex < path.size()) {
-                    Beam newBeam = new Beam(path);
-                    newBeam.currentTargetIndex = this.currentTargetIndex;
-                    getWorld().addObject(newBeam, getX(), getY());
-                }
-                getWorld().removeObject(this);
+
+    // Act method - move the beam, reflect off mirrors, and handle world change
+    public void act()
+    {
+        move(BEAM_SPEED); // Move the beam
+
+        // Check for intersection with the first mirror (reflect)
+        Actor mirror = getOneIntersectingObject(MirrorLevel1.class);
+        if (mirror != null) {
+            MirrorLevel1 m = (MirrorLevel1) mirror;
+            int newAngle = m.getReflectionAngle(getRotation()); // Get the reflection angle
+            getWorld().addObject(new Beam(newAngle), getX(), getY()); // Create a new beam with the reflected angle
+            getWorld().removeObject(this); // Remove the current beam
+            if (!hasReflectedOnce) {
+                hasReflectedOnce = true; // Mark the first reflection
             }
-        } else if (isAtEdge()) {
+            return;
+        }
+
+        // If the beam has reflected once, check for the second reflection (off the second mirror)
+        if (hasReflectedOnce && !hasReflectedTwice) {
+            mirror = getOneIntersectingObject(MirrorLevel1.class);
+            if (mirror != null) {
+                MirrorLevel1 m = (MirrorLevel1) mirror;
+                int newAngle = m.getReflectionAngle(getRotation()); // Get the reflection angle from the second mirror
+                getWorld().addObject(new Beam(newAngle), getX(), getY()); // Create a new beam with the reflected angle
+                getWorld().removeObject(this); // Remove the current beam
+                hasReflectedTwice = true; // Mark the second reflection
+            }
+        }
+
+        // After the second reflection, check if the beam is directed towards the Moon
+        if (hasReflectedTwice) {
+            Actor moon = getOneIntersectingObject(Moon.class);
+            if (moon != null && !hasTouchedMoon) {
+                hasTouchedMoon = true; // Prevent multiple world changes
+                System.out.println("Beam has touched the Moon after two reflections. Changing the world...");
+                Greenfoot.setWorld(new FairyMeeting3()); // Change the world
+                Greenfoot.stop(); // Stop further actions to ensure no multiple world changes
+            }
+        }
+
+        // Remove the beam if it reaches the edge of the world
+        if (isAtEdge()) {
             getWorld().removeObject(this);
         }
     }
-    
-    private void setInitialRotation() {
-        if (path != null && currentTargetIndex < path.size()) {
-            Point target = path.get(currentTargetIndex);
-            setRotation(angleTo(target));
-        }
-    }
-    
-    private int angleTo(Point p) {
-        int dx = p.x - getX();
-        int dy = p.y - getY();
-        double angle = Math.toDegrees(Math.atan2(dy, dx));
-        return (int)((angle + 360) % 360);
-    }
-    
-    private double distanceTo(Point p) {
-        double dx = p.x - getX();
-        double dy = p.y - getY();
-        return Math.sqrt(dx * dx + dy * dy);
-    }
-    
-    private GreenfootImage makeBeamImage() {
+
+    // Create a simple beam image
+    private GreenfootImage makeBeamImage()
+    {
         GreenfootImage img = new GreenfootImage(35, 3);
-        img.setColor(new Color(173, 216, 230, 180));
+        img.setColor(new Color(173, 216, 230, 180)); // Light blue color for the beam
         img.fillRect(0, 0, 35, 3);
         return img;
     }

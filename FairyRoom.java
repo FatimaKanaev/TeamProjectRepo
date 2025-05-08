@@ -131,13 +131,9 @@ public class FairyRoom extends World
         Michel michel20 = new Michel();
         addObject(michel20,648,132);
         MirrorLevel1 mirrorLevel1 = new MirrorLevel1();
-        addObject(mirrorLevel1,450,240);
+        addObject(mirrorLevel1,571,297);
         MirrorLevel1 mirrorLevel12 = new MirrorLevel1();
-        addObject(mirrorLevel12,571,297);
-        MirrorLevel1 mirrorLevel13 = new MirrorLevel1();
-        addObject(mirrorLevel13,462,344);
-        MirrorLevel1 mirrorLevel14 = new MirrorLevel1();
-        addObject(mirrorLevel14,345,292);
+        addObject(mirrorLevel12,339,336);
     }
     
 }

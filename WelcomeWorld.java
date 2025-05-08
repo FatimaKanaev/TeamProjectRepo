@@ -10,8 +10,6 @@ public class WelcomeWorld extends World
     public WelcomeWorld() {
         super(750, 431, 1);
         addObject(new AnimatedGifWelcome(), 430, 240);
-        Credits credits = new Credits();
-        addObject(credits,45,417);
         Help help = new Help();
         addObject(help,387,418);
         Quit quit = new Quit();

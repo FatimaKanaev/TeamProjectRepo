@@ -1,9 +1,8 @@
 #BlueJ class context
 comment0.target=MirrorLevel1
+comment0.text=\r\n\ Mirror\ class\ that\ reflects\ beams\ when\ clicked.\r\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=incomingAngle
 comment2.target=int\ getReflectionAngle(int)
-comment3.params=dx\ dy
-comment3.target=void\ moveInDirection(int,\ int)
-numComments=4
+numComments=3
