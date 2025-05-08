@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
  * Write a description of class Dialogue1Fairy here.
@@ -6,29 +6,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Dialogue1Fairy extends DialogueBox
-{
-    protected String wrapText(String text, int maxWidth, Font font){
-        String[] words = text.split("");
-        StringBuilder wrapped = new StringBuilder();
-        StringBuilder line = new StringBuilder();
-        
-        for (String word : words){
-            String testLine = line + word + "";
-            GreenfootImage testImg = new GreenfootImage(testLine.toString(), font.getSize(), Color.WHITE, new Color(0,0,0,0));
-            
-            if (testImg.getWidth()>maxWidth){
-                wrapped.append(line).append("\n");
-                line = new StringBuilder(word+ "");
-            } else {
-                line.append(word).append("");
-            }
-        }
-        wrapped.append(line);
-        return wrapped.toString().trim();
-    }
-    public Dialogue1Fairy(){
-        lines = new String[]{
+public class Dialogue1Fairy extends DialogueBox {
+    public Dialogue1Fairy() {
+        lines = new String[] {
             "Oh! Well, hello there! Are you alright? You look... rather lost.",
             "I guess I am. I just woke up in the middle of nowhere, and I can’t\nremember how I got here… or much of anything, really.",
             "How unfortunate! Poor thing. Is there something I can do to help?",
@@ -43,26 +23,33 @@ public class Dialogue1Fairy extends DialogueBox
             "Trust me, you will certainly need it at the end of your journey.",
             "Come along now, don’t be shy.",
         };
-        
-        speakers = new String[]{
-            "Fairy",
-            "Player",
-            "Fairy",
-            "Player",
-            "Fairy",
-            "Player",
-            "Fairy",
-            "Fairy",
-            "Fairy",
-            "Player",
-            "Fairy",
-            "Fairy",
-            "Fairy"
+
+        speakers = new String[] {
+            "Fairy", "Player", "Fairy", "Player", "Fairy", "Player", "Fairy",
+            "Fairy", "Fairy", "Player", "Fairy", "Fairy", "Fairy"
         };
-        displayLine();
+
+        updateDisplay();
     }
-    
-    protected void onDialogueEnd(){
+
+    protected String wrapText(String text, int maxWidth, Font font) {
+        String[] words = text.split(" ");
+        StringBuilder wrapped = new StringBuilder(), line = new StringBuilder();
+
+        for (String word : words) {
+            String test = line + word + " ";
+            GreenfootImage testImg = new GreenfootImage(test, font.getSize(), Color.WHITE, null);
+            if (testImg.getWidth() > maxWidth) {
+                wrapped.append(line).append("\n");
+                line = new StringBuilder(word + " ");
+            } else {
+                line.append(word).append(" ");
+            }
+        }
+        return wrapped.append(line).toString().trim();
+    }
+
+    protected void onDialogueEnd() {
         Greenfoot.setWorld(new FairyMeeting2());
     }
 }

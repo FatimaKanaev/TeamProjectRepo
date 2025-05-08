@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Dialogue1Fairy
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Dialogue1Fairy\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=text\ maxWidth\ font
-comment1.target=java.lang.String\ wrapText(java.lang.String,\ int,\ greenfoot.Font)
-comment2.params=
-comment2.target=Dialogue1Fairy()
+comment1.params=
+comment1.target=Dialogue1Fairy()
+comment2.params=text\ maxWidth\ font
+comment2.target=java.lang.String\ wrapText(java.lang.String,\ int,\ greenfoot.Font)
 comment3.params=
 comment3.target=void\ onDialogueEnd()
 numComments=4

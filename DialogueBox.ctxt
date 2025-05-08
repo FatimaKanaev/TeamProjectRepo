@@ -1,17 +1,9 @@
 #BlueJ class context
 comment0.target=DialogueBox
 comment1.params=
-comment1.target=DialogueBox()
+comment1.target=void\ act()
 comment2.params=
-comment2.target=void\ act()
+comment2.target=void\ updateDisplay()
 comment3.params=
-comment3.target=void\ updateDisplayText()
-comment4.params=
-comment4.target=void\ startNewLine()
-comment5.params=text\ maxWidth\ font
-comment5.target=java.lang.String\ wrapText(java.lang.String,\ int,\ greenfoot.Font)
-comment6.params=
-comment6.target=void\ displayLine()
-comment7.params=
-comment7.target=void\ onDialogueEnd()
-numComments=8
+comment3.target=void\ onDialogueEnd()
+numComments=4

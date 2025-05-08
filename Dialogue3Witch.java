@@ -1,32 +1,12 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
- * Write a description of class Dialogue1Fairy here.
+ * Write a description of class Dialogue3Witch here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Dialogue3Witch extends DialogueBox
-{
-    protected String wrapText(String text, int maxWidth, Font font){
-        String[] words = text.split("");
-        StringBuilder wrapped = new StringBuilder();
-        StringBuilder line = new StringBuilder();
-        
-        for (String word : words){
-            String testLine = line + word + "";
-            GreenfootImage testImg = new GreenfootImage(testLine.toString(), font.getSize(), Color.WHITE, new Color(0,0,0,0));
-            
-            if (testImg.getWidth()>maxWidth){
-                wrapped.append(line).append("\n");
-                line = new StringBuilder(word+ "");
-            } else {
-                line.append(word).append("");
-            }
-        }
-        wrapped.append(line);
-        return wrapped.toString().trim();
-    }
+public class Dialogue3Witch extends DialogueBox {
     public Dialogue3Witch(){
    
         lines = new String[]{
@@ -48,30 +28,34 @@ public class Dialogue3Witch extends DialogueBox
             "Thanks, I guess. But… you mocked me not so long ago, why would you give\nme your charm and help me all of a sudden?",
             "Well... I’m just bitter I guess. Maybe I’m tired of living the same night for\nwho-knows-how-long. Either way—don’t waste another second. Here’s my\ncharm, now go on!"
         };
-        
-        speakers = new String[]{
-            "Player",
-            "Witch",
-            "Player",
-            "Witch",
-            "Player",
-            "Witch",
-            "Player",
-            "Witch",
-            "Player",
-            "Witch",
-            "Player",
-            "Witch",
-            "Witch",
-            "Witch",
-            "Witch",
-            "Player",
-            "Witch"
+
+        speakers = new String[] {
+            "Player", "Witch", "Player", "Witch", "Player", "Witch", "Player", "Witch",
+            "Player", "Witch", "Player", "Witch", "Witch", "Witch", "Witch", "Player", "Witch"
         };
-        displayLine();
+
+        updateDisplay();
     }
-    
-    protected void onDialogueEnd(){
+
+    protected String wrapText(String text, int maxWidth, Font font) {
+        String[] words = text.split(" ");
+        StringBuilder wrapped = new StringBuilder(), line = new StringBuilder();
+
+        for (String word : words) {
+            String testLine = line + word + " ";
+            GreenfootImage testImg = new GreenfootImage(testLine, font.getSize(), Color.WHITE, null);
+            if (testImg.getWidth() > maxWidth) {
+                wrapped.append(line).append("\n");
+                line = new StringBuilder(word + " ");
+            } else {
+                line.append(word).append(" ");
+            }
+        }
+
+        return wrapped.append(line).toString().trim();
+    }
+
+    protected void onDialogueEnd() {
         Greenfoot.setWorld(new WitchHouse2());
     }
 }

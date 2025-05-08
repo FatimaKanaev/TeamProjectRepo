@@ -1,32 +1,13 @@
 import greenfoot.*;
+
 /**
- * Write a description of class Dialogue1Fairy here.
+ * Write a description of class Dialogue4Mermaid here.
  * 
- * @author (your name) ;
+ * @author (your name) 
  * @version (a version number or a date)
  */
-public class Dialogue4Mermaid extends DialogueBox
-{
-    protected String wrapText(String text, int maxWidth, Font font){
-        String[] words = text.split("");
-        StringBuilder wrapped = new StringBuilder();
-        StringBuilder line = new StringBuilder();
-        
-        for (String word : words){
-            String testLine = line + word + "";
-            GreenfootImage testImg = new GreenfootImage(testLine.toString(), font.getSize(), Color.WHITE, new Color(0,0,0,0));
-            
-            if (testImg.getWidth()>maxWidth){
-                wrapped.append(line).append("\n");
-                line = new StringBuilder(word+ "");
-            } else {
-                line.append(word).append("");
-            }
-        }
-        wrapped.append(line);
-        return wrapped.toString().trim();
-    }
-    public Dialogue4Mermaid(){
+public class Dialogue4Mermaid extends DialogueBox {
+     public Dialogue4Mermaid(){
    
         lines = new String[]{
             "The witch said you know where the princess is. I need you to tell me. ",
@@ -44,29 +25,34 @@ public class Dialogue4Mermaid extends DialogueBox
             "Why do I even need this artifact?",
             "You ask too many questions. Listen to the shells. Let their voices fill the\nsilence. Only then can you resist the pull of forgetfulness… and finish what\nyou came here to do.",
         };
-        
-        speakers = new String[]{
-            "Player",
-            "Mermaid",
-            "Player",
-            "Mermaid",
-            "Mermaid",
-            "Mermaid",
-            "Player",
-            "Mermaid",
-            "Player",
-            "Mermaid",
-            "Player",
-            "Mermaid",
-            "Player",
-            "Mermaid",
-            "Player",
-            "Mermaid"
+
+        speakers = new String[] {
+            "Player", "Mermaid", "Player", "Mermaid", "Mermaid", "Mermaid", "Player", "Mermaid",
+            "Player", "Mermaid", "Player", "Mermaid", "Player", "Mermaid"
         };
-        displayLine();
+
+        updateDisplay();
     }
-    
-    protected void onDialogueEnd(){
+
+    protected String wrapText(String text, int maxWidth, Font font) {
+        String[] words = text.split(" ");
+        StringBuilder wrapped = new StringBuilder(), line = new StringBuilder();
+
+        for (String word : words) {
+            String testLine = line + word + " ";
+            GreenfootImage testImg = new GreenfootImage(testLine, font.getSize(), Color.WHITE, null);
+            if (testImg.getWidth() > maxWidth) {
+                wrapped.append(line).append("\n");
+                line = new StringBuilder(word + " ");
+            } else {
+                line.append(word).append(" ");
+            }
+        }
+
+        return wrapped.append(line).toString().trim();
+    }
+
+    protected void onDialogueEnd() {
         Greenfoot.setWorld(new MeetMermaid2());
     }
 }

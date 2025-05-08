@@ -160,7 +160,6 @@ public class FairyRoom extends World
         while (!placed && attempts < 50) {
             int x = minX + Greenfoot.getRandomNumber(maxX - minX + 1);
             int y = minY + Greenfoot.getRandomNumber(maxY - minY + 1);
-
             boolean tooClose = false;
 
             for (MirrorLevel1 m : placedMirrors) {

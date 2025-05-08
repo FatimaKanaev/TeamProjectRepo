@@ -1,32 +1,13 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
- * Write a description of class Dialogue1Fairy here.
+ * Write a description of class Dialogue2Fairy here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Dialogue2Fairy extends DialogueBox
-{
-    protected String wrapText(String text, int maxWidth, Font font){
-        String[] words = text.split("");
-        StringBuilder wrapped = new StringBuilder();
-        StringBuilder line = new StringBuilder();
-        
-        for (String word : words){
-            String testLine = line + word + "";
-            GreenfootImage testImg = new GreenfootImage(testLine.toString(), font.getSize(), Color.WHITE, new Color(0,0,0,0));
-            if (testImg.getWidth()>maxWidth){
-                wrapped.append(line).append("\n");
-                line = new StringBuilder(word+ "");
-            } else {
-                line.append(word).append("");
-            }
-        }
-        wrapped.append(line);
-        return wrapped.toString().trim();
-    }
-    public Dialogue2Fairy(){
+public class Dialogue2Fairy extends DialogueBox {
+     public Dialogue2Fairy(){
         
         lines = new String[]{
             "Oh my stars! You did it—you’ve lit up all my moonroses! Now I can keep\nproducing fairy dust! I truly can’t thank you enough, dear one.",
@@ -37,20 +18,45 @@ public class Dialogue2Fairy extends DialogueBox
             "Perhaps your memories will return soon, and with them, something that will\nlead you straight to her.",
             "Thank you, truly."
         };
-        
-        speakers = new String[]{
-            "Fairy",
-            "Fairy",
-            "Fairy",
-            "Fairy",
-            "Fairy",
-            "Fairy",
-            "Player",
+
+        speakers = new String[] {
+            "Fairy", "Fairy", "Fairy", "Fairy", "Fairy", "Fairy", "Player"
         };
-        displayLine();
+
+        updateDisplay();
     }
-    
-    protected void onDialogueEnd(){
+
+    protected String wrapText(String text, int maxWidth, Font font) {
+        // Split the input text into an array of words using a space as the delimiter
+        String[] words = text.split(" ");   
+        // Create a StringBuilder for the wrapped text (final result) and one for the current line being constructed
+        StringBuilder wrapped = new StringBuilder(), line = new StringBuilder();
+
+        // Iterate through each word in the text
+        for (String word : words) {
+            // Test the current line + the next word to see if it fits within the maxWidth
+            String testLine = line + word + " ";
+            // Create a GreenfootImage of the test line with the provided font to check the width of the text
+            GreenfootImage testImg = new GreenfootImage(testLine, font.getSize(), Color.WHITE, null);
+        
+            // If the test line width exceeds the maxWidth, we start a new line
+            if (testImg.getWidth() > maxWidth) {
+                // Append the current line to the wrapped text and add a newline
+                wrapped.append(line).append("\n");
+                // Start a new line with the current word
+                line = new StringBuilder(word + " ");
+            } else {
+                // If the test line fits, add the word to the current line
+                line.append(word).append(" ");
+            }
+        }
+
+        // After the loop, append any remaining text in the current line to the wrapped text
+        return wrapped.append(line).toString().trim();
+    }
+
+
+    protected void onDialogueEnd() {
         Greenfoot.setWorld(new FairyMeeting2());
     }
 }
