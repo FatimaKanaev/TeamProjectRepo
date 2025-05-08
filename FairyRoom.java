@@ -15,11 +15,24 @@ public class FairyRoom extends World
      * Constructor for objects of class FairyRoom.
      * 
      */
+    private GreenfootSound backgroundMusic;
+    
     public FairyRoom()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(747, 431, 1); 
+        backgroundMusic = new GreenfootSound("Theme12.wav");
+        backgroundMusic.playLoop();
         prepare();
+    }
+    
+    public void started() {
+        if(backgroundMusic != null)
+        backgroundMusic.playLoop();
+    }
+    
+    public void stopped() {
+        if (backgroundMusic != null)
+        backgroundMusic.pause();
     }
     
     /**
@@ -135,5 +148,4 @@ public class FairyRoom extends World
         MirrorLevel1 mirrorLevel12 = new MirrorLevel1();
         addObject(mirrorLevel12,339,336);
     }
-    
 }

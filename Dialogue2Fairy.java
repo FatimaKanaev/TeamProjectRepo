@@ -57,6 +57,6 @@ public class Dialogue2Fairy extends DialogueBox {
 
 
     protected void onDialogueEnd() {
-        Greenfoot.setWorld(new FairyMeeting2());
+        Greenfoot.setWorld(new FairyMeeting4());
     }
 }

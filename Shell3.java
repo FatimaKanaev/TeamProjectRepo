@@ -1,22 +1,10 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
-/**
- * Write a description of class Shell3 here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class Shell3 extends Actor
-{
-    /**
-     * Act - do whatever the Shell3 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+public class Shell3 extends Actor {
     public void act() {
-        
-        if (Greenfoot.isKeyDown("3")) {
-            // Play the sound
-            Greenfoot.playSound("sound3.wav");  
-        }
+        // if (Greenfoot.mouseClicked(this)) {
+            // // Play the sound for Shell1
+            // SoundManager.playSound("shell3.wav"); // Replace with your sound file for Shell1
+        // }
     }
 }

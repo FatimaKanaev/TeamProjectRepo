@@ -175,5 +175,7 @@ public class MeetMermaid3
         goodGérarld3.setLocation(204,430);
         GoodGérarld goodGérarld7 = new GoodGérarld();
         addObject(goodGérarld7,204,430);
+        Mermaid mermaid2 = new Mermaid();
+        addObject(mermaid2,385,398);
     }
 }
