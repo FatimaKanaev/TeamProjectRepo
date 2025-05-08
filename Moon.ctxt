@@ -1,7 +1,17 @@
 #BlueJ class context
 comment0.target=Moon
-comment0.text=\r\n\ \r\n
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ LightSource\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
+comment1.target=Moon()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ generateBeamToPointA()
+comment4.params=
+comment4.target=void\ generateRandomBeam()
+comment5.params=
+comment5.target=boolean\ areMirrorsCorrectlyPlaced()
+comment6.params=target
+comment6.target=boolean\ isMirrorNear(java.awt.Point)
+comment7.params=actor\ target
+comment7.target=double\ distanceTo(greenfoot.Actor,\ java.awt.Point)
+numComments=8

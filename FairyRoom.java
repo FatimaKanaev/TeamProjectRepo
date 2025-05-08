@@ -28,7 +28,8 @@ public class FairyRoom extends World
      */
     private void prepare()
     {
-        spawnRandomMirrors();
+        BeamManager manager = new BeamManager();
+        addObject(manager, 0, 0);
         Michel michel = new Michel();
         addObject(michel,454,164);
         Michel michel2 = new Michel();
@@ -129,58 +130,14 @@ public class FairyRoom extends World
         addObject(michel29,230,167);
         Michel michel20 = new Michel();
         addObject(michel20,648,132);
+        MirrorLevel1 mirrorLevel1 = new MirrorLevel1();
+        addObject(mirrorLevel1,450,240);
+        MirrorLevel1 mirrorLevel12 = new MirrorLevel1();
+        addObject(mirrorLevel12,571,297);
+        MirrorLevel1 mirrorLevel13 = new MirrorLevel1();
+        addObject(mirrorLevel13,462,344);
+        MirrorLevel1 mirrorLevel14 = new MirrorLevel1();
+        addObject(mirrorLevel14,345,292);
     }
     
-    public void spawnRandomMirrors(){
-        int number = Greenfoot.getRandomNumber(2)+3; 
-
-        for (int i = 0; i < number; i++) {
-            int x = 300 + Greenfoot.getRandomNumber(141); // 100 to 500
-            int y = 240 + Greenfoot.getRandomNumber(340); // 200 to 300
-
-            addObject(new MirrorLevel1(), x, y);
-        }
-    }
-    
-    public void spawnMirrorsWithoutOverlap(int count) {
-    int number = Greenfoot.getRandomNumber(4); // 0 to 5 mirrors
-    int margin = 40; // Prevent spawning near the edge
-    int minX = margin;
-    int maxX = getWidth() - margin;
-    int minY = margin;
-    int maxY = getHeight() - margin;
-    int minDistance = 40; 
-
-    List<MirrorLevel1> placedMirrors = new ArrayList<>();
-
-    for (int i = 0; i < number; i++) {
-        boolean placed = false;
-        int attempts = 0;
-
-        while (!placed && attempts < 50) {
-            int x = minX + Greenfoot.getRandomNumber(maxX - minX + 1);
-            int y = minY + Greenfoot.getRandomNumber(maxY - minY + 1);
-            boolean tooClose = false;
-
-            for (MirrorLevel1 m : placedMirrors) {
-                int dx = m.getX() - x;
-                int dy = m.getY() - y;
-                double distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < minDistance) {
-                    tooClose = true;
-                    break;
-                }
-            }
-
-            if (!tooClose) {
-                MirrorLevel1 mirror = new MirrorLevel1();
-                addObject(mirror, x, y);
-                placedMirrors.add(mirror);
-                placed = true;
-            }
-
-            attempts++;
-        }
-    }
-}
 }

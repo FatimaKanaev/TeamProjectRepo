@@ -1,17 +1,7 @@
-import lang.stride.*;
-import java.util.*;
 import greenfoot.*;
 
-/**
- * 
- */
 public class MirrorLevel1 extends Actor
 {
-    private Actor MirrorLevel1;
-
-    /**
-     * Act - do whatever the mirror wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
         if (Greenfoot.mouseClicked(this)) {
@@ -19,19 +9,12 @@ public class MirrorLevel1 extends Actor
         }
     }
 
-    /**
-     * 
-     */
     public int getReflectionAngle(int incomingAngle)
     {
         int currentRotation = getRotation();
-        int reflected = (2 * currentRotation - incomingAngle + 360) % 360;
-        return reflected;
+        return (2 * currentRotation - incomingAngle + 360) % 360;
     }
 
-    /**
-     * 
-     */
     public void moveInDirection(int dx, int dy)
     {
         int newX = getX() + dx;
@@ -40,39 +23,4 @@ public class MirrorLevel1 extends Actor
             setLocation(newX, newY);
         }
     }
-
-    // private void checkBounce() {
-        // if (isTouching(Gérarld.class)) {
-            // // Basic bounce: reverse direction
-            // dx = -dx * 0.7; // recoil, maybe weaker
-            // dy = -dy * 0.7;
-
-            // // Move it slightly back so it unsticks
-            // setLocation((int)(getX() + dx), (int)(getY() + dy));
-        // }
-        // if (isTouching(Bernard.class)) {
-            // // Basic bounce: reverse direction
-            // dx = -dx * 0.7; // recoil, maybe weaker
-            // dy = -dy * 0.7;
-
-            // // Move it slightly back so it unsticks
-            // setLocation((int)(getX() + dx), (int)(getY() + dy));
-        // }
-        // if (isTouching(Gérarld.class)) {
-            // // Basic bounce: reverse direction
-            // dx = -dx * 0.7; // recoil, maybe weaker
-            // dy = -dy * 0.7;
-
-            // // Move it slightly back so it unsticks
-            // setLocation((int)(getX() + dx), (int)(getY() + dy));
-        // }
-        // if (isTouching(Bernard.class)) {
-            // // Basic bounce: reverse direction
-            // dx = -dx * 0.7; // recoil, maybe weaker
-            // dy = -dy * 0.7;
-
-            // // Move it slightly back so it unsticks
-            // setLocation((int)(getX() + dx), (int)(getY() + dy));
-        // }
-
-    }
+}
